@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class WaterMillResult {
-	private boolean chk;
+	private boolean chk; 
 	private Object data;
 	private String msg;
 
