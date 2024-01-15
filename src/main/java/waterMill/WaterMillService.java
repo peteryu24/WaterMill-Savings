@@ -13,7 +13,7 @@ public class WaterMillService {
 		try {
 			return waterMillResult.result(totalAmount(monthlyAmount, endPeriod));
 		} catch (Exception e) {
-			return waterMillResult.resultError(null);
+			return waterMillResult.resultError("Error", null);
 		}
 	}
 
