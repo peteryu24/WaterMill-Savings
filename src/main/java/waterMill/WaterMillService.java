@@ -1,12 +1,13 @@
 package waterMill;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Service;
 
 @Service
 public class WaterMillService {
 
-	@Autowired
+	@Resource
 	private WaterMillResult waterMillResult;
 
 	public WaterMillResult setForCalculation(int monthlyAmount, int endPeriod) {
@@ -17,7 +18,6 @@ public class WaterMillService {
 		} catch (Exception e) {
 			return waterMillResult.resultError("Exception");
 		}
-
 	}
 
 	private Integer totalAmount(int monthlyAmount, int endPeriod) {
