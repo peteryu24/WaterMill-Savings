@@ -14,7 +14,13 @@ public class WaterMillResult {
 		return this;
 	}
 
-	public WaterMillResult resultError(String msg, Object data) {
+	public WaterMillResult resultError(String msg) {
+		this.chk = false;
+		this.msg = msg;
+		return this;
+	}
+
+	public WaterMillResult resultErrorEntity(String msg, Object data) {
 		this.chk = false;
 		this.msg = msg;
 		this.data = data;

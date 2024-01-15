@@ -26,12 +26,12 @@ public class WaterMillController {
 
 	@ExceptionHandler(IllegalArgumentException.class)
 	public WaterMillResult IllegalArgumentException(IllegalArgumentException exception) {
-		return waterMillResult.resultError("IllegalArgumentException",
+		return waterMillResult.resultErrorEntity("IllegalArgumentException",
 				ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage()));
 	}
 
 	@ExceptionHandler(RuntimeException.class)
 	public WaterMillResult handleRuntimeException(RuntimeException exception) {
-		return waterMillResult.resultError("RuntimeException", ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage()));
+		return waterMillResult.resultErrorEntity("RuntimeException", ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage()));
 	}
 }

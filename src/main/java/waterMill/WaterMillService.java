@@ -12,9 +12,12 @@ public class WaterMillService {
 	public WaterMillResult setForCalculation(int monthlyAmount, int endPeriod) {
 		try {
 			return waterMillResult.result(totalAmount(monthlyAmount, endPeriod));
+		} catch (RuntimeException e) {
+			return waterMillResult.resultError("RuntimeException");
 		} catch (Exception e) {
-			return waterMillResult.resultError("Error", null);
+			return waterMillResult.resultError("Exception");
 		}
+
 	}
 
 	private Integer totalAmount(int monthlyAmount, int endPeriod) {
