@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 public class WaterMillResult {
 	private boolean chk;
 	private Object data;
+	private String msg;
 
 	public WaterMillResult result(Object data) {
 		this.chk = true;
@@ -13,8 +14,9 @@ public class WaterMillResult {
 		return this;
 	}
 
-	public WaterMillResult resultError(Object data) {
+	public WaterMillResult resultError(String msg, Object data) {
 		this.chk = false;
+		this.msg = msg;
 		this.data = data;
 		return this;
 	}
@@ -25,5 +27,9 @@ public class WaterMillResult {
 
 	public Object getData() {
 		return data;
+	}
+
+	public String getMsg() {
+		return msg;
 	}
 }
